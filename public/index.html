@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="zh-CN">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#faf9f6"><title>Study Space · 你的复习自习室</title><link rel="stylesheet" href="./style.css"></head>
+<body>
+<aside class="sidebar">
+  <a href="#home" class="brand"><span class="brand-icon">s<span>✳</span></span> study space<span class="brand-dot">.</span></a>
+  <div class="workspace"><span class="avatar">Y</span><div>我的学习空间<small>一点进步，每一天</small></div><span class="workspace-star">✧</span></div>
+  <div class="nav-label">WORKSPACE</div>
+  <nav aria-label="主导航"><a class="nav-item active" href="#home" data-route="home"><span>▦</span> 学习总览</a><button class="nav-item" id="open-notes"><span>▤</span> 我的笔记 <span class="nav-count" id="note-count">0</span></button></nav>
+  <div class="nav-label courses-label">MY COURSES <span>03</span></div>
+  <nav id="course-nav" aria-label="课程导航"></nav>
+  <div class="sidebar-bottom"><div class="little-flower">✳</div><strong>慢慢来，也很快。</strong><p>每一次专注，都是向前一步。</p><span class="tiny-line"></span><div class="profile"><span class="avatar profile-avatar">Y</span><div>我的自习室<small>为更好的自己充电</small></div><span>↗</span></div></div>
+</aside>
+<div class="main-wrap">
+  <header class="topbar"><button id="menu-toggle" aria-label="展开导航">☰</button><div class="breadcrumb">我的学习空间 <span>/</span> <strong id="breadcrumb">学习总览</strong></div><div class="top-right"><span class="status-dot"></span> Make room for learning <span class="top-avatar">Y</span></div></header>
+  <main>
+    <div id="home-view">
+      <section class="welcome"><div><div class="eyebrow"><span></span> YOUR LITTLE CORNER OF FOCUS</div><h1>把知识，慢慢变成底气<span>。</span></h1><p>欢迎回到你的自习室。选一门课，从一个小目标开始。</p></div><div class="date-chip"><span>✺</span><div id="today-date"></div></div></section>
+      <section class="hero"><div class="hero-copy"><span class="pill">A LITTLE EVERY DAY</span><h2>今天的努力，<br>是明天的从容。</h2><p>梳理知识、整理笔记、准备考试。<br>让每一份投入，都有迹可循。</p><button class="dark-button" id="continue-study">开始今天的复习 <span>↗</span></button></div><div class="hero-art" aria-hidden="true"><span class="art-spark">✳</span><div class="art-orbit"></div><div class="art-card card-back"><div>GOOD THINGS TAKE FOCUS</div><span>Keep<br>growing.</span><i>✺</i></div><div class="art-card card-front"><div class="art-check">✓</div><strong>One step<br>at a time.</strong><div class="art-lines"><i></i><i></i></div><span class="art-mini">YOU'VE GOT THIS ↗</span></div><span class="art-star">✧</span><div class="art-caption">Small steps. Real progress.</div></div></section>
+      <section class="stats" aria-label="学习统计"><div class="stat"><span class="stat-icon lavender">▧</span><div><strong>3 <small>门课程</small></strong><p>为你的目标，有序前进</p></div></div><div class="stat"><span class="stat-icon peach">⤷</span><div><strong>7 <small>个学习分支</small></strong><p>让复习更清晰一点</p></div></div><div class="stat"><span class="stat-icon green">✓</span><div><strong><span id="done-count">0</span> <small>项已完成</small></strong><p id="progress-message">每一个小进步都值得记录</p></div></div></section>
+      <section class="courses-section"><div class="section-heading"><div><h2>我的课程 <span>My courses</span></h2><p>找到你的节奏，学好每一课。</p></div><label class="search"><span>⌕</span><input id="search" type="search" placeholder="搜索课程或学习分支…" aria-label="搜索课程或学习分支"><kbd>/</kbd></label></div><div id="course-grid" class="course-grid"></div><p id="empty-search" hidden>没有找到相关课程，试试「考试」「化学」或「写作」。</p></section>
+      <div class="bottom-note"><span>✧</span> 不必一次做到完美，只要今天比昨天多懂一点。<span class="note-sign">Your pace. Your space.</span></div>
+    </div>
+    <section id="detail-view" hidden></section>
+    <section id="notes-view" hidden></section>
+    <footer><span>study space. <span class="footer-muted">为专注留一点空间</span></span><span>Learn a little. Grow a lot. <span class="footer-flower">✳</span></span></footer>
+  </main>
+</div>
+<dialog id="editor"><form id="note-form"><div class="modal-heading"><div><span class="eyebrow">CAPTURE A THOUGHT</span><h2>记录一个新发现</h2></div><button type="button" id="close-editor" class="icon-button" aria-label="关闭">×</button></div><label>笔记标题<input id="note-title" required maxlength="100" placeholder="给这个想法起个名字"></label><label>所属课程<select id="note-course"><option value="envir">ENVIR 102</option><option value="chem">CHEM10</option><option value="eap">EAP 101B</option></select></label><label>笔记内容<textarea id="note-body" rows="7" required placeholder="记下关键概念、疑问，或你的思考…"></textarea></label><button class="dark-button" type="submit">保存笔记 ↗</button></form></dialog>
+<div class="toast" role="status" id="toast"></div>
+<script src="./app.js" type="module"></script>
+</body></html>
